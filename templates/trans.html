@@ -1,0 +1,32 @@
+{%extends "layout.html"%}
+{%block body%}
+    <h1>Transaction records shown here: </h1>
+    <table class="table table-striped table-dark">
+        <thead>
+          <tr>
+            <th>No.</th>
+					  <th>Name</th>
+					  <th>Email</th>
+					  <th>Amt Debited</th>
+					  <th>Amt Credited</th>
+					  <th>Acc. Bal</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in trans %}
+				<tr>
+					<td>{{i.id}}</td>
+					<td>{{i.name}}</td>
+					<td>{{i.email}}</td>
+					<td>{{i.deb_amt}}</td>
+					<td>{{i.cr_amt}}</td>
+					<td>{{i.ac_bal}}₹</td>
+				</tr>
+				{% endfor %}
+          
+        </tbody>
+      </table>
+
+{%endblock%}
+
+
